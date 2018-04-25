@@ -1,11 +1,13 @@
 package adivinaminumero;
 import java.util.Scanner;
+import java.util.Random;
 
 public class AdivinaMiNumero {
     public final int numeroDesconocido;
 
-    public AdivinaMiNumero(int numeroDesconocido) {
-        this.numeroDesconocido = numeroDesconocido;
+
+    public AdivinaMiNumero() {
+        this.numeroDesconocido = (int) (Math.random() * 99) + 1;;
     }
     public void jugar(){
         mostrarIntroduccion();
@@ -16,24 +18,23 @@ public class AdivinaMiNumero {
     private void mostrarIntroduccion(){
         System.out.println("Estoy pensando un numero entre 0 y 100");
         System.out.println("Podes adivinarlo??");
-        jugada();
+        System.out.println("mi numero secreto es"+numeroDesconocido);
     }
     
     private void jugada(){
-        int intento=1;
-        boolean adivino=true;
-        while(adivino){
             System.out.println("Ingresa el numero:");
             Scanner scan = new Scanner(System.in);
             int i = scan.nextInt();
             if(numeroDesconocido==i){
-                adivino= !adivino;
                 System.out.println("Adivinaste");
-                System.out.println(adivino);
-                break;
             }else{
-                intento=+intento;
+                if(numeroDesconocido<i){
+                    System.out.println("Mi numero es mas chico");
+                    jugada();
+                }else{
+                    System.out.println("Mi numero es mas grande");
+                    jugada();
+                }
             }
         }
-    }
 }
