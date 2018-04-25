@@ -11,4 +11,8 @@ package adivinaminumero;
  */
 public class Main {
     
+    public static void main(String[] args) {
+        new AdivinaMiNumero(3).jugar();
+    }
+    
 }
