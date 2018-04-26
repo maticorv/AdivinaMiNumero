@@ -15,7 +15,7 @@ public class AdivinaMiNumero1 {
     private static String Preguntar(int Min, int Max) {
 	String respuesta = "";
 	do{
-            System.out.println("Pensa un numero entre: "+ Min + " y " +Max +"!\n ingresa 'si' cuando estes listo");
+            System.out.println("Pensa un numero entre: "+ Min + " y " +Max +"!\ningresa 'si' cuando estes listo");
             Scanner scan = new Scanner(System.in);
             respuesta = scan.next();
 	}while(respuesta.equals(""));
