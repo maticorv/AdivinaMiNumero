@@ -22,19 +22,19 @@ public class AdivinaMiNumero {
     }
     
     private void jugada(){
-            System.out.println("Ingresa el numero:");
-            Scanner scan = new Scanner(System.in);
-            int i = scan.nextInt();
-            if(numeroDesconocido==i){
-                System.out.println("Adivinaste");
+        System.out.println("Ingresa el numero:");
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+        if(numeroDesconocido==i){
+            System.out.println("Adivinaste");
+        }else{
+            if(numeroDesconocido<i){
+                System.out.println("Mi numero es mas chico");
+                jugada();
             }else{
-                if(numeroDesconocido<i){
-                    System.out.println("Mi numero es mas chico");
-                    jugada();
-                }else{
-                    System.out.println("Mi numero es mas grande");
-                    jugada();
-                }
+                System.out.println("Mi numero es mas grande");
+                jugada();
             }
         }
+    }
 }
