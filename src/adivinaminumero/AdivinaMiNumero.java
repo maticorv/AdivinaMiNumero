@@ -1,7 +1,5 @@
 package adivinaminumero;
 import java.util.Scanner;
-import java.util.Random;
-import java.io.IOException; 
 
 public class AdivinaMiNumero {
     public final int numeroDesconocido;
