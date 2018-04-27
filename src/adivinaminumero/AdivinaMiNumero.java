@@ -1,6 +1,7 @@
 package adivinaminumero;
 import java.util.Scanner;
 import java.util.Random;
+import java.io.IOException; 
 
 public class AdivinaMiNumero {
     public final int numeroDesconocido;
@@ -18,23 +19,27 @@ public class AdivinaMiNumero {
     private void mostrarIntroduccion(){
         System.out.println("Estoy pensando un numero entre 0 y 100");
         System.out.println("Podes adivinarlo??");
-        System.out.println("mi numero secreto es"+numeroDesconocido);
+//        System.out.println("mi numero secreto es"+numeroDesconocido);
     }
     
     private void jugada(){
         System.out.println("Ingresa el numero:");
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
-        if(numeroDesconocido==i){
-            System.out.println("Adivinaste");
-        }else{
-            if(numeroDesconocido<i){
-                System.out.println("Mi numero es mas chico");
-                jugada();
+        try{
+            Scanner scan = new Scanner(System.in);
+            int i = scan.nextInt();
+            if(numeroDesconocido==i){
+                System.out.println("Adivinaste");
             }else{
-                System.out.println("Mi numero es mas grande");
-                jugada();
+                if(numeroDesconocido<i){
+                    System.out.println("Mi numero es mas chico");
+                    jugada();
+                }else{
+                    System.out.println("Mi numero es mas grande");
+                    jugada();
+                }
             }
+        }catch(Exception e){
+            jugada();
         }
     }
 }
