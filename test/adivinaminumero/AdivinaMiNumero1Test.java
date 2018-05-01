@@ -40,13 +40,28 @@ public class AdivinaMiNumero1Test {
     /**
      * Test of jugar method, of class AdivinaMiNumero1.
      */
+//    @Test
+//    public void testJugar() {
+//        System.out.println("jugar");
+//        AdivinaMiNumero1 instance = new AdivinaMiNumero1();
+//        instance.jugar();
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+
+    /**
+     * Test of adivinar method, of class AdivinaMiNumero1.
+     */
     @Test
-    public void testJugar() {
-        System.out.println("jugar");
-        AdivinaMiNumero1 instance = new AdivinaMiNumero1();
-        instance.jugar();
+    public void testAdivinar() {
+        System.out.println("adivinar");
+        int min = 0;
+        int max = 100;
+        int result = AdivinaMiNumero1.adivinar(min, max);
+        if(result<0||result>100){
+            fail("The test case is a prototype.");
+        }
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

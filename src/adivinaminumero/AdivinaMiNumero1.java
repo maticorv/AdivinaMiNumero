@@ -6,20 +6,17 @@ public class AdivinaMiNumero1 {
     final int MAX = 100;
 
     public void jugar(){
-        String Listo = Preguntar(MIN, MAX);
-        if(Listo.equalsIgnoreCase("si")){
-            adivinarNumero(MIN,MAX);
-        }
+        Preguntar(MIN, MAX);
+        adivinarNumero(MIN,MAX);
     }
 
-    private static String Preguntar(int Min, int Max) {
+    private static void Preguntar(int Min, int Max) {
 	String respuesta = "";
 	do{
             System.out.println("Pensa un numero entre: "+ Min + " y " +Max +"!\ningresa 'si' cuando estes listo");
             Scanner scan = new Scanner(System.in);
             respuesta = scan.next();
-	}while(respuesta.equals(""));
-	return respuesta;
+	}while(!respuesta.equals("si"));
     }
 
     private static void adivinarNumero(int min,int max) {
@@ -44,7 +41,7 @@ public class AdivinaMiNumero1 {
         } while(!(respuesta.equalsIgnoreCase("si")));        
     }
 
-    private static int adivinar(int min, int max) {
+    public static int adivinar(int min, int max) {
     final int DIVISOR = 2;
     int numero = (int) Math.ceil((min + max)/DIVISOR);
     return numero;
