@@ -58,7 +58,7 @@ public class AdivinaMiNumero1Test {
         int min = 0;
         int max = 100;
         int result = AdivinaMiNumero1.adivinar(min, max);
-        if(result<0||result>100){
+        if(result<min||result>max){
             fail("The test case is a prototype.");
         }
         // TODO review the generated test code and remove the default call to fail.
