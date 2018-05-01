@@ -38,15 +38,17 @@ public class AdivinaMiNumeroTest {
     }
 
     /**
-     * Test of jugar method, of class AdivinaMiNumero.
+     * Test of mostrarIntroduccion method, of class AdivinaMiNumero.
      */
     @Test
-    public void testJugar() {
-        System.out.println("jugar");
+    public void testMostrarIntroduccion() {
+        System.out.println("mostrarIntroduccion");
         AdivinaMiNumero instance = new AdivinaMiNumero();
-        instance.jugar();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        boolean expResult = true;
+        boolean result = instance.mostrarIntroduccion();
+        if(!result){
+            fail("The test case is a prototype.");
+        }
     }
     
 }

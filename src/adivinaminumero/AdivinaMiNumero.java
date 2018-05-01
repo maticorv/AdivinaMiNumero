@@ -14,9 +14,10 @@ public class AdivinaMiNumero {
         
     }
     
-    private void mostrarIntroduccion(){
+    public boolean mostrarIntroduccion(){
         System.out.println("Estoy pensando un numero entre 0 y 100");
         System.out.println("Podes adivinarlo??");
+        return true;
 //        System.out.println("mi numero secreto es"+numeroDesconocido);
     }
     
