@@ -22,7 +22,7 @@ public class AdivinaMiNumero {
     public boolean mostrarIntroduccion(){
         System.out.println("Estoy pensando un numero entre 0 y 100");
         System.out.println("Podes adivinarlo??");
-        System.out.println("mi numero secreto es "+numeroDesconocido);
+//        System.out.println("mi numero secreto es "+numeroDesconocido);
         return true;
     }
     

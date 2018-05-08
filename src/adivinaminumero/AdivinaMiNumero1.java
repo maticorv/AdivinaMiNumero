@@ -5,9 +5,10 @@ public class AdivinaMiNumero1 {
     final int MIN = 0;
     final int MAX = 100;
 
-    public void jugar(){
+    public boolean jugar(){
         Preguntar(MIN, MAX);
         adivinarNumero(MIN,MAX);
+        return true;
     }
 
     private static void Preguntar(int Min, int Max) {
@@ -19,10 +20,9 @@ public class AdivinaMiNumero1 {
 	}while(!respuesta.equals("si"));
     }
 
-    private static void adivinarNumero(int min,int max) {
+    private boolean adivinarNumero(int min,int max) {
 	String respuesta ="";
 	int numero = 0;
-	do{
             numero = adivinar(min, max);
             System.out.println("Tu numero es " + numero+  "?\n"
                             + "Si es tu numero escribi: 'si'\n"
@@ -32,13 +32,15 @@ public class AdivinaMiNumero1 {
             respuesta = scan.next();
 //            Si la respuesta es -
             if(respuesta.equalsIgnoreCase("-")){ 
-                    max = numero;
+                max = numero;
+                adivinarNumero(min,max);
             }
 //            Si la respuesta es +
             if(respuesta.equalsIgnoreCase("+")){
-                    min = numero;
+                min = numero;
+                adivinarNumero(min,max);
             }
-        } while(!(respuesta.equalsIgnoreCase("si")));        
+            return true;    
     }
 
     public static int adivinar(int min, int max) {
