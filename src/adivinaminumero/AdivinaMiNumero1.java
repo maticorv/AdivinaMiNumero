@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class AdivinaMiNumero1 {
     final int MIN = 0;
     final int MAX = 100;
+    String respuesta="";
 
     public boolean jugar(){
         Preguntar(MIN, MAX);
@@ -11,18 +12,19 @@ public class AdivinaMiNumero1 {
         return true;
     }
 
-    private static void Preguntar(int Min, int Max) {
-	String respuesta = "";
-	do{
+    public boolean Preguntar(int Min, int Max) {
+	while(!((respuesta).equals("si"))){
             System.out.println("Pensa un numero entre: "+ Min + " y " +Max +"!\ningresa 'si' cuando estes listo");
             Scanner scan = new Scanner(System.in);
             respuesta = scan.next();
-	}while(!respuesta.equals("si"));
+	}
+        respuesta="";
+        return true;
     }
 
-    private boolean adivinarNumero(int min,int max) {
-	String respuesta ="";
+    public boolean adivinarNumero(int min,int max) {
 	int numero = 0;
+        while(!respuesta.equalsIgnoreCase("si")){
             numero = adivinar(min, max);
             System.out.println("Tu numero es " + numero+  "?\n"
                             + "Si es tu numero escribi: 'si'\n"
@@ -30,17 +32,18 @@ public class AdivinaMiNumero1 {
                             + "Si tu numero es mayor escribi: '+'");
             Scanner scan = new Scanner(System.in);
             respuesta = scan.next();
-//            Si la respuesta es -
+    //            Si la respuesta es -
             if(respuesta.equalsIgnoreCase("-")){ 
                 max = numero;
-                adivinarNumero(min,max);
             }
-//            Si la respuesta es +
+    //            Si la respuesta es +
             if(respuesta.equalsIgnoreCase("+")){
                 min = numero;
-                adivinarNumero(min,max);
             }
-            return true;    
+        }
+        respuesta="";
+        System.out.println("Te gane!!");
+        return true;    
     }
 
     public static int adivinar(int min, int max) {

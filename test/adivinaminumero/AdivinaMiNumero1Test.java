@@ -38,18 +38,6 @@ public class AdivinaMiNumero1Test {
     }
 
     /**
-     * Test of jugar method, of class AdivinaMiNumero1.
-     */
-//    @Test
-//    public void testJugar() {
-//        System.out.println("jugar");
-//        AdivinaMiNumero1 instance = new AdivinaMiNumero1();
-//        instance.jugar();
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-
-    /**
      * Test of adivinar method, of class AdivinaMiNumero1.
      */
     @Test
@@ -63,5 +51,61 @@ public class AdivinaMiNumero1Test {
         }
         // TODO review the generated test code and remove the default call to fail.
     }
-    
+
+    /**
+     * Test of jugar method, of class AdivinaMiNumero1.
+     */
+    @Test
+    public void testJugar() {
+        int Min = 0;
+        int Max = 100;
+        System.out.println("jugar");
+        AdivinaMiNumero1 instance = new AdivinaMiNumero1();
+        instance.respuesta="si";
+        boolean expResult = true;
+        boolean result = instance.Preguntar(Min,Max);
+        instance.respuesta="si";
+        instance.adivinarNumero(Min, Max);
+        if(expResult!=result){
+             fail("The test case is a prototype.");
+        }
+        // TODO review the generated test code and remove the default call to fail.
+    }
+
+    /**
+     * Test of Preguntar method, of class AdivinaMiNumero1.
+     */
+    @Test
+    public void testPreguntar() {
+        System.out.println("Preguntar");
+        int Min = 0;
+        int Max = 100;
+        AdivinaMiNumero1 instance = new AdivinaMiNumero1();
+        instance.respuesta="si";
+        boolean expResult = true;
+        boolean result = instance.Preguntar(Min, Max);
+        if(expResult!=result){
+            fail("The test case is a prototype.");
+        }
+        // TODO review the generated test code and remove the default call to fail.
+        
+    }
+
+    /**
+     * Test of adivinarNumero method, of class AdivinaMiNumero1.
+     */
+    @Test
+    public void testAdivinarNumero() {
+        System.out.println("adivinarNumero");
+        int min = 0;
+        int max = 100;
+        AdivinaMiNumero1 instance = new AdivinaMiNumero1();
+        instance.respuesta="si";
+        boolean expResult = true;
+        boolean result = instance.adivinarNumero(min, max);
+        if(expResult!=result){
+            fail("The test case is a prototype.");
+        }
+        // TODO review the generated test code and remove the default call to fail.
+    }
 }
