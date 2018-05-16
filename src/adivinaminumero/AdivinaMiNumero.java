@@ -2,7 +2,7 @@ package adivinaminumero;
 import java.util.Scanner;
 
 public class AdivinaMiNumero {
-    public final int numeroDesconocido;
+    public int numeroDesconocido;
     int i;
     String j;
 
@@ -11,11 +11,11 @@ public class AdivinaMiNumero {
     }
     public boolean jugar(){
         mostrarIntroduccion();
-        do{
+        while(!(j.equals("Adivinaste"))){
             i = solicitarNumero();
             j=jugada(i);
             System.out.println(j);
-        }while(!(j.equals("Adivinaste")));
+        }
         return true;
     }
     
