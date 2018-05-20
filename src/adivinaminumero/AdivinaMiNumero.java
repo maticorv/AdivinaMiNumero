@@ -8,6 +8,7 @@ public class AdivinaMiNumero {
 
     public AdivinaMiNumero() {
         this.numeroDesconocido = (int) (Math.random() * 100);
+        j="";
     }
     public boolean jugar(){
         mostrarIntroduccion();
